@@ -1,3 +1,5 @@
+import { getLikes } from './Involvement.js';
+
 const main = document.querySelector('.main-page');
 
 const showMovies = async (data) => {
@@ -21,17 +23,19 @@ const showMovies = async (data) => {
     stats.classList.add('stats');
     const like = document.createElement('i');
     like.setAttribute('class', 'fa like-btn fa-heart');
+    like.setAttribute('id', `${data[i].id}`);
     like.setAttribute('aria-hidden', 'true');
     const likeCount = document.createElement('p');
     likeCount.setAttribute('class', 'rateCounts');
     likeCount.setAttribute('Id', `${data[i].id}`);
-    likeCount.textContent = '0 likes';
-    stats.append(like, likeCount);
+    likeCount.textContent = '0';
+    stats.append(like);
     movieRating.appendChild(stats);
     movieDescript.append(title, movieRating);
     const commentBtn = document.createElement('button');
     commentBtn.classList.add('movie-comment');
     commentBtn.setAttribute('movie-Id', `${data[i].id}`);
+    commentBtn.id = `${data[i].id}`;
     commentBtn.textContent = 'Comments';
     const line = document.createElement('br');
     const Reservationbtn = document.createElement('button');
@@ -42,6 +46,21 @@ const showMovies = async (data) => {
     movieDescript.append(commentBtn, line, Reservationbtn);
     movieDisplay.append(Img, movieDescript);
     main.appendChild(movieDisplay);
+
+    const updateLikes = async () => {
+      const response = await getLikes();
+      const counts = document.querySelectorAll('.rateCounts');
+
+      counts.forEach((button) => {
+        response.forEach((res) => {
+          if (button.id === res.item_id) {
+            button.textContent = res.likes;
+          }
+        });
+      });
+      stats.append(likeCount);
+    };
+    updateLikes();
   }
 };
 export default showMovies;
