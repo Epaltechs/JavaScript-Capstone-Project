@@ -19,23 +19,4 @@ const getLikes = async () => {
   return likes;
 };
 
-const listenHeartClicks = (movieId, likes) => {
-  const likeHeart = document.querySelectorAll('.like-btn');
-  likeHeart.forEach((like) => {
-    if (like.id === movieId) {
-      likes = Number(likes) + 1;
-      like.nextElementSibling.textContent = likes;
-      postLike(movieId);
-    }
-  });
-};
-
-window.addEventListener('click', (e) => {
-  if (e.target.classList.contains('like-btn')) {
-    const likes = e.target.nextElementSibling.textContent;
-    listenHeartClicks(e.target.id, likes);
-  }
-});
-
-export { postLike, getLikes, listenHeartClicks };
-
+export { postLike, getLikes };
