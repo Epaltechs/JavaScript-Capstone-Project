@@ -48,64 +48,57 @@
   column-gap: 10px;
 }
 
-.reservations-container {
+.comments-container {
   margin-top: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.add-reservation-form {
+.add-comment-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   outline: none;
 }
 
-.add-reservation-form input[type="submit"] {
+.add-comment-form input[type="submit"] {
   padding: 10px 5px;
 }
 
-.add-reservation-form input[type="text"] {
-  padding: 10px 5px;
-  outline: none;
-}
-
-.add-reservation-form textarea {
+.add-comment-form input[type="text"] {
   padding: 10px 5px;
   outline: none;
 }
 
-.reservation-date-username {
-  font-size: 16px;
+.add-comment-form textarea {
+  padding: 10px 5px;
+  outline: none;
+}
+
+.comment-date-username {
+  font-size: 20px;
   margin-right: 10px;
 }
 
-.reservation-body {
+.comment-body {
   margin-top: 10px;
 }
 
-h4 {
-  margin-bottom: 10px;
+.list-of-comments {
+  margin-top: 10px;
 }
 
-.list-of-reservations {
-  margin-top: 1px;
-  display: flex;
-  gap: 5px;
-  flex-direction: column;
-}
-
-.reservation-div {
+.commment-div {
   width: 300px;
 }
 
-.reservation-form-title {
+.comment-form-title {
   text-align: center;
   position: relative;
   padding-bottom: 10px;
 }
 
-.reservation-form-title::after {
+.comment-form-title::after {
   background: #ec5242;
   content: "";
   position: absolute;
@@ -133,7 +126,7 @@ h4 {
   cursor: pointer;
 }
 
-.total-reservations {
+.total-comments {
   margin: 0 2px;
 }
 
