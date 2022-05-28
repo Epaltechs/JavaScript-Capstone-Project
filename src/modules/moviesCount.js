@@ -10,3 +10,6 @@ const counterFunction = async () => {
 };
 
 counterFunction();
+
+// const counterMovies = document.querySelector('.')
+

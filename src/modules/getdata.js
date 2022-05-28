@@ -5,4 +5,8 @@ const getData = async () => {
   return data;
 };
 
+
 export default getData;
+
+export default getData;
+

@@ -38,3 +38,4 @@ window.addEventListener('click', (e) => {
 });
 
 export { postLike, getLikes, listenHeartClicks };
+
