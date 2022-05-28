@@ -4,6 +4,7 @@ import updateTotalNumberOfComments, {
 
 const commentPopUp = document.querySelector('.movie-popup');
 
+<<<<<<< HEAD
 const getTvInfo = async (tvUrl) => {
   try {
     const response = await fetch(tvUrl);
@@ -26,6 +27,24 @@ const comment = async (tvUrl, formData = {}) => {
   const response = answer.text();
   return response;
 };
+=======
+const getTvInfo = (tvUrl) => fetch(tvUrl)
+  .then((response) => response.json())
+  .then((actualData) => actualData)
+  .catch((error) => error);
+
+const comment = (tvUrl, formData = {}) => fetch(tvUrl, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(formData),
+
+}).then((response) => response.text())
+  .then((actualData) => (actualData.error ? { error: true, info: actualData }
+    : { error: false, info: actualData }))
+  .catch((error) => ({ error: true, info: error }));
+>>>>>>> 4080d5e761861075bafdef0766cc790d274b6e28
 
 const addComment = async (formData) => {
   const response = await comment(commentApi, formData);
@@ -77,6 +96,7 @@ const showPopUp = (movieId) => {
               <p><b>Genere : </b> <small>${data.type}</small></p>
              </div>
           </div>
+<<<<<<< HEAD
           <div class="comments-container">
           <div class="commment-div">
               <h4> Total Comments (<span class="total-comments"></span>)</h4>
@@ -89,6 +109,20 @@ const showPopUp = (movieId) => {
           <input type="submit" value="Comment" id="submit-button">
         </form>
        </div>
+=======
+         <div class="comments-container">
+            <div class="commment-div">
+                <h4> Total Comments (<span class="total-comments"></span>)</h4>
+                <p class="list-of-comments"></p>
+            </div>
+          <form class="add-comment-form">
+          <h3 class="comment-form-title">Add Your Comment Here</h3>
+            <input type="text" name="username" placeholder="Your Name..." required>
+            <textarea name="comment" required placeholder="Your Comment..."></textarea>
+            <input type="submit" value="Comment" id="submit-button">
+          </form>
+         </div>
+>>>>>>> 4080d5e761861075bafdef0766cc790d274b6e28
           `;
     closePopUp();
     displayComments(movieId);
@@ -126,4 +160,8 @@ const commentsListner = () => {
 };
 
 export default commentsListner;
+<<<<<<< HEAD
 export { commentPopUp };
+=======
+export { commentPopUp };
+>>>>>>> 4080d5e761861075bafdef0766cc790d274b6e28
