@@ -19,7 +19,6 @@ const getLikes = async () => {
   return likes;
 };
 
-<<<<<<< HEAD
 const listenHeartClicks = (movieId, likes) => {
   const likeHeart = document.querySelectorAll('.like-btn');
   likeHeart.forEach((like) => {
@@ -39,6 +38,3 @@ window.addEventListener('click', (e) => {
 });
 
 export { postLike, getLikes, listenHeartClicks };
-=======
-export { postLike, getLikes };
->>>>>>> 4080d5e761861075bafdef0766cc790d274b6e28

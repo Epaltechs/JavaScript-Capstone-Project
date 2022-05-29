@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 import { getLikes } from './Involvement.js';
-=======
-import { postLike, getLikes } from './Involvement.js';
->>>>>>> 4080d5e761861075bafdef0766cc790d274b6e28
 
 const main = document.querySelector('.main-page');
 
 const showMovies = async (data) => {
   for (let i = 0; i < data.length; i += 1) {
-    window.console.log(data[0]);
     const movieDisplay = document.createElement('div');
     movieDisplay.classList.add('movie-content');
     const movieCard = document.createElement('div');
@@ -44,7 +39,9 @@ const showMovies = async (data) => {
     commentBtn.textContent = 'Comments';
     const line = document.createElement('br');
     const Reservationbtn = document.createElement('button');
+    Reservationbtn.setAttribute('movie-Id', `${data[i].id}`);
     Reservationbtn.classList.add('movie-reservation');
+    Reservationbtn.id = `${data[i].id}`;
     Reservationbtn.textContent = 'Reservation';
     movieDescript.append(commentBtn, line, Reservationbtn);
     movieDisplay.append(Img, movieDescript);
@@ -55,7 +52,6 @@ const showMovies = async (data) => {
       const counts = document.querySelectorAll('.rateCounts');
 
       counts.forEach((button) => {
-<<<<<<< HEAD
         response.forEach((res) => {
           if (button.id === res.item_id) {
             button.textContent = res.likes;
@@ -64,23 +60,6 @@ const showMovies = async (data) => {
       });
       stats.append(likeCount);
     };
-=======
-        for (let i = 0; i < response.length; i += 1) {
-          if (button.id === response[i].item_id) {
-            button.textContent = `${response[i].likes} likes`;
-          }
-        }
-      });
-      stats.append(likeCount);
-    };
-
-    like.addEventListener('click', (e) => {
-      const itemId = e.target.attributes.id.value;
-      postLike(itemId);
-      like.classList.toggle('liked');
-      updateLikes();
-    });
->>>>>>> 4080d5e761861075bafdef0766cc790d274b6e28
     updateLikes();
   }
 };
