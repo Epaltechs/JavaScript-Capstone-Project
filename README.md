@@ -103,7 +103,7 @@ npx eslint .
 
 - GitHub:[Emmanuel Paul](https://github.com/Epaltechs) 
 - Twitter: [Emmanuel Paul](http://twitter.com/@emmapaul247)
-- LinkedIn: [Emmanuel Paul](https://www.linkedin.com/in/emmanuel-paul-a2bab7b4/)
+- LinkedIn: [Emmanuel Paul](https://www.linkedin.com/in/emmanuel-s-paul/)
 
 ## 🤝 Contributing
 
