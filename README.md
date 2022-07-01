@@ -16,6 +16,8 @@
 
 [Live Demo Link](https://epaltechs.github.io/JavaScript-Capstone-Project)
 
+[Live Demo Link](https://62bf0fffde934f7ef424ee81--vocal-speculoos-da966d.netlify.app)
+
 ## Live presentation of the project
 [Live presentation](https://drive.google.com/file/d/1Wzhbcowhe_mbe0swPFA95Y-UgZRGbJsT/view?usp=sharing)
 
